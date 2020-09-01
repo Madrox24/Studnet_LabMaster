@@ -770,88 +770,117 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="bg" id="Rpc-em-IzM"/>
                             </imageView>
-                            <customView hidden="YES" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I5W-8v-bOc">
+                            <containerView hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CHW-qd-myt">
                                 <rect key="frame" x="43" y="120" width="254" height="190"/>
-                                <subviews>
-                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QJw-ie-Zch">
-                                        <rect key="frame" x="32" y="32" width="190" height="126"/>
-                                        <subviews>
-                                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="1" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uhB-Pi-YVh">
-                                                <rect key="frame" x="0.0" y="90" width="142" height="36"/>
-                                                <subviews>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EeK-Tv-Q2K">
-                                                        <rect key="frame" x="-2" y="17" width="146" height="19"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Witaj, Jan Kowalski" id="OQb-0U-Ie5">
-                                                            <font key="font" metaFont="systemMedium" size="16"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5HM-K7-nMb">
-                                                        <rect key="frame" x="-2" y="0.0" width="129" height="16"/>
-                                                        <textFieldCell key="cell" title="Twój numer: 139999" id="UII-ZI-1fQ">
-                                                            <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                </subviews>
-                                                <visibilityPriorities>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                </visibilityPriorities>
-                                                <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                </customSpacing>
-                                            </stackView>
-                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dC4-hw-iAT">
-                                                <rect key="frame" x="-2" y="36" width="194" height="38"/>
-                                                <textFieldCell key="cell" title="Udało Ci się potwierdzić obecność!" id="3zh-nB-BYk">
-                                                    <font key="font" metaFont="system" size="15"/>
-                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                </textFieldCell>
-                                            </textField>
-                                            <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3C-sr-grz">
-                                                <rect key="frame" x="-6" y="-7" width="59" height="31"/>
-                                                <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Iw6-wz-ooQ">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                            </button>
-                                        </subviews>
-                                        <visibilityPriorities>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
-                                        </visibilityPriorities>
-                                        <customSpacing>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
-                                        </customSpacing>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="QJw-ie-Zch" secondAttribute="trailing" constant="32" id="GhF-3d-B3u"/>
-                                    <constraint firstAttribute="width" constant="254" id="ZOM-KV-pyq"/>
-                                    <constraint firstAttribute="height" constant="190" id="bcc-4A-oU8"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QJw-ie-Zch" secondAttribute="bottom" constant="32" id="cv7-Nj-CSv"/>
-                                    <constraint firstItem="QJw-ie-Zch" firstAttribute="leading" secondItem="I5W-8v-bOc" secondAttribute="leading" constant="32" id="h5W-9d-PUJ"/>
-                                    <constraint firstItem="QJw-ie-Zch" firstAttribute="top" secondItem="I5W-8v-bOc" secondAttribute="top" constant="32" id="x9E-fs-TtG"/>
-                                </constraints>
-                            </customView>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <connections>
+                                    <segue destination="iw6-bk-yZY" kind="embed" identifier="ConfirmationView" id="07l-ON-KDH"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="alertView" destination="I5W-8v-bOc" id="hnA-nP-tRw"/>
+                        <outlet property="alertView" destination="CHW-qd-myt" id="p2I-ib-tGU"/>
                         <outlet property="studentIdTextField" destination="kJj-e7-nSz" id="DAX-MK-zQp"/>
                     </connections>
                 </viewController>
                 <customObject id="Zli-Ag-iVu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="553" y="281"/>
+        </scene>
+        <!--Alert View Controller-->
+        <scene sceneID="vWS-dk-CsY">
+            <objects>
+                <viewController id="iw6-bk-yZY" customClass="AlertViewController" customModule="LabMaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="hJk-Gn-yTh" customClass="AlertView" customModule="LabMaster" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="254" height="190"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HxE-pW-rLW">
+                                <rect key="frame" x="32" y="32" width="190" height="126"/>
+                                <subviews>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="1" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UyC-Ds-oNw">
+                                        <rect key="frame" x="0.0" y="90" width="142" height="36"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fP0-t3-cfj">
+                                                <rect key="frame" x="-2" y="17" width="146" height="19"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Witaj, Jan Kowalski" id="prE-TH-mx8">
+                                                    <font key="font" metaFont="systemMedium" size="16"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zO8-VC-O2z">
+                                                <rect key="frame" x="-2" y="0.0" width="129" height="16"/>
+                                                <textFieldCell key="cell" title="Twój numer: 139999" id="Q27-fj-54Z">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="71g-Z2-jHO">
+                                        <rect key="frame" x="-2" y="36" width="194" height="38"/>
+                                        <textFieldCell key="cell" title="Udało Ci się potwierdzić obecność!" id="p66-4H-BRG">
+                                            <font key="font" metaFont="system" size="15"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Jig-Ut-ecO">
+                                        <rect key="frame" x="-6" y="-7" width="59" height="31"/>
+                                        <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OWC-XH-fqW">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="126" id="M5E-8o-wLH"/>
+                                    <constraint firstAttribute="width" constant="190" id="vsd-ud-y3R"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="HxE-pW-rLW" secondAttribute="trailing" constant="32" id="DZM-RX-eRB"/>
+                            <constraint firstItem="HxE-pW-rLW" firstAttribute="leading" secondItem="hJk-Gn-yTh" secondAttribute="leading" constant="32" id="TcG-AO-aAz"/>
+                            <constraint firstItem="HxE-pW-rLW" firstAttribute="top" secondItem="hJk-Gn-yTh" secondAttribute="top" constant="32" id="aOH-fZ-wHp"/>
+                            <constraint firstAttribute="bottom" secondItem="HxE-pW-rLW" secondAttribute="bottom" constant="32" id="tut-gJ-bWR"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="greetingsTextField" destination="fP0-t3-cfj" id="Xwo-HM-wPJ"/>
+                            <outlet property="studentIdTextField" destination="zO8-VC-O2z" id="aAK-8n-hV8"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="hJk-Gn-yTh" id="N5V-1q-GcT"/>
+                    </connections>
+                </viewController>
+                <customObject id="0q3-Np-fEj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="745"/>
         </scene>
     </scenes>
     <resources>

@@ -12,8 +12,8 @@ class ViewController: NSViewController {
     
     // properties
     let apiClient = ApiClient()
-    let readerId = 5467
-
+    var alertViewController: AlertViewController?
+    
     // outlets
     @IBOutlet weak var studentIdTextField: NSTextField!
     @IBOutlet weak var alertView: NSView!
@@ -21,9 +21,6 @@ class ViewController: NSViewController {
     // lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.alertView.wantsLayer = true
-        self.alertView.layer?.backgroundColor = .init(gray: 0.95, alpha: 1)
-        self.alertView.layer?.cornerRadius = 10
     }
 
     override var representedObject: Any? {
@@ -32,14 +29,21 @@ class ViewController: NSViewController {
         }
     }
 
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ConfirmationView" {
+            self.alertViewController = segue.destinationController as? AlertViewController
+        }
+    }
+    
     // actions
     @IBAction func didTapConfirmAttendance(_ sender: Any) {
         let studentIdString = self.studentIdTextField.stringValue
         guard let studentId = Int(studentIdString) else { return }
-        let request = AttendanceRequest(id: readerId, studentId: studentId)
+        let request = AttendanceRequest(id: Constants.station.id, studentId: studentId)
         apiClient.postAttendance(request) { result in
             switch try? result.get() {
             case .ok:
+                self.alertViewController?.setConfirmationView(name: "Jakub", id: studentId)
                 self.alertView.isHidden = false
             case .wrongId:
                 break
