@@ -14,20 +14,21 @@ struct AttendanceResponse: Decodable {
     enum CodingKeys: String, CodingKey {
         case response
     }
-    
 }
 
 enum AttendanceResponseResult: Decodable {
     case ok
     case wrongId
     case serverError
+    case other
     
     init(from decoder: Decoder) throws {
         let value = try decoder.singleValueContainer().decode(String.self)
         switch value {
             case "OK": self = .ok
             case "ID NOT FOUND": self = .wrongId
-            default: self = .serverError
+            case "INTERNAL SERVER ERROR": self = .serverError
+            default: self = .other
        }
     }
 }

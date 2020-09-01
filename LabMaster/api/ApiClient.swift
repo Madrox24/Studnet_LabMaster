@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class ApiClient {
-    public func postAttendance(_ attendance: AttendanceRequest) {
+    public func postAttendance(_ attendance: AttendanceRequest, completion: @escaping (Result<AttendanceResponseResult, Never>) -> Void) {
         let url = URL(string: "https://run.mocky.io/v3/fd771838-d942-4bea-8a03-d1ec6ba6c3f9")!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -20,8 +20,8 @@ class ApiClient {
         AF.request(request)
             .validate()
             .responseDecodable(of: AttendanceResponse.self) { response in
-                guard let result = response.value else { return }
-                print(result.response)
+                guard let result = response.value else { return completion(.success(.other)) }
+                return completion(.success(result.response))
         }
     }
 }
