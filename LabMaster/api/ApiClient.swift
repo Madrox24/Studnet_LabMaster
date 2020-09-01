@@ -10,17 +10,18 @@ import Foundation
 import Alamofire
 
 class ApiClient {
-    public func getRequest() {
-        let request = AF.request(Constants.api.base)
-        let parameters: AttendanceRequest = AttendanceRequest(id: 12, studentId: 121323)
-//
-//        AF.request(request, parameters: parameters)
-//          .validate()
-//          .responseDecodable(of: self) { response in
-//            // 4
-//            guard let starships = response.value else { return }
-//            self.items = starships.all
-//            self.tableView.reloadData()
-//        }
+    public func postAttendance(_ attendance: AttendanceRequest) {
+        let url = URL(string: "https://run.mocky.io/v3/fd771838-d942-4bea-8a03-d1ec6ba6c3f9")!
+        var request = URLRequest(url: url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        request.httpBody = try? JSONEncoder().encode(attendance)
+        
+        AF.request(request)
+            .validate()
+            .responseDecodable(of: AttendanceResponse.self) { response in
+                guard let result = response.value else { return }
+                print(result.response)
+        }
     }
 }

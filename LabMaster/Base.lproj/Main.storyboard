@@ -704,7 +704,7 @@
         <!--View Controller-->
         <scene sceneID="DH5-FM-f1A">
             <objects>
-                <viewController id="DCB-6k-a8P" sceneMemberID="viewController">
+                <viewController id="DCB-6k-a8P" customClass="ViewController" customModule="LabMaster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" appearanceType="aqua" id="ovz-ky-7Tl">
                         <rect key="frame" x="0.0" y="0.0" width="632" height="430"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -772,7 +772,7 @@
                 </viewController>
                 <customObject id="Zli-Ag-iVu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="531" y="271"/>
+            <point key="canvasLocation" x="553" y="281"/>
         </scene>
     </scenes>
     <resources>

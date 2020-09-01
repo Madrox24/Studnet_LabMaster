@@ -7,3 +7,27 @@
 //
 
 import Foundation
+
+struct AttendanceResponse: Decodable {
+    let response: AttendanceResponseResult
+
+    enum CodingKeys: String, CodingKey {
+        case response
+    }
+    
+}
+
+enum AttendanceResponseResult: Decodable {
+    case ok
+    case wrongId
+    case serverError
+    
+    init(from decoder: Decoder) throws {
+        let value = try decoder.singleValueContainer().decode(String.self)
+        switch value {
+            case "OK": self = .ok
+            case "ID NOT FOUND": self = .wrongId
+            default: self = .serverError
+       }
+    }
+}
