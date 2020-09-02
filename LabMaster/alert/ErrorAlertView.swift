@@ -8,20 +8,10 @@
 
 import Cocoa
 
-class ErrorAlertView: NSView {
-    
-    // properties
-    var delegate: AlertViewDelegate?
+class ErrorAlertView: AlertView {
     
     // outlets
     @IBOutlet weak var descriptionTextField: NSTextField!
-    
-    // lifecycle
-    override func awakeFromNib() {
-        wantsLayer = true
-        layer?.backgroundColor = .init(gray: 0.95, alpha: 1)
-        layer?.cornerRadius = 10
-    }
     
     // public func
     public func setErrorView(description: String) {

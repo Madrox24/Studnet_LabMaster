@@ -8,10 +8,9 @@
 
 import Cocoa
 
-class AttendanceAlertView: NSView {
+class AttendanceAlertView: AlertView {
     
     // properties
-    var delegate: AlertViewDelegate?
     private var name: String? {
         didSet {
             guard let name = name else { return }
@@ -28,13 +27,6 @@ class AttendanceAlertView: NSView {
     // outlets
     @IBOutlet weak var greetingsTextField: NSTextField!
     @IBOutlet weak var studentIdTextField: NSTextField!
-    
-    // lifecycle
-    override func awakeFromNib() {
-        wantsLayer = true
-        layer?.backgroundColor = .init(gray: 0.95, alpha: 1)
-        layer?.cornerRadius = 10
-    }
     
     // public func
     public func setConfirmationView(name: String, id: Int) {
