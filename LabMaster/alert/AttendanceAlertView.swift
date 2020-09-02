@@ -8,10 +8,6 @@
 
 import Cocoa
 
-protocol AlertViewDelegate {
-    func hideView()
-}
-
 class AttendanceAlertView: NSView {
     
     // properties

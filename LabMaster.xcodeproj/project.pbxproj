@@ -16,8 +16,12 @@
 		B193512F24F3059700CD9286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B193512E24F3059700CD9286 /* Assets.xcassets */; };
 		B193513224F3059700CD9286 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B193513024F3059700CD9286 /* Main.storyboard */; };
 		B193513C24F306B700CD9286 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B193513B24F306B700CD9286 /* Alamofire */; };
-		B1F1C22C24FED8E80041B579 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F1C22B24FED8E80041B579 /* AlertView.swift */; };
-		B1F1C22E24FEE2C10041B579 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F1C22D24FEE2C10041B579 /* AlertViewController.swift */; };
+		B1F1C22C24FED8E80041B579 /* AttendanceAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F1C22B24FED8E80041B579 /* AttendanceAlertView.swift */; };
+		B1F1C22E24FEE2C10041B579 /* AttendanceAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F1C22D24FEE2C10041B579 /* AttendanceAlertViewController.swift */; };
+		B1F1C2322500307B0041B579 /* ErrorAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F1C2312500307B0041B579 /* ErrorAlertViewController.swift */; };
+		B1F1C234250031B50041B579 /* ErrorAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F1C233250031B50041B579 /* ErrorAlertView.swift */; };
+		B1F1C23825003C620041B579 /* AlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F1C23725003C620041B579 /* AlertViewDelegate.swift */; };
+		B1F1C23A25003C8A0041B579 /* AlertViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F1C23925003C8A0041B579 /* AlertViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +36,12 @@
 		B193513124F3059700CD9286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B193513324F3059700CD9286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B193513424F3059700CD9286 /* LabMaster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LabMaster.entitlements; sourceTree = "<group>"; };
-		B1F1C22B24FED8E80041B579 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
-		B1F1C22D24FEE2C10041B579 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		B1F1C22B24FED8E80041B579 /* AttendanceAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceAlertView.swift; sourceTree = "<group>"; };
+		B1F1C22D24FEE2C10041B579 /* AttendanceAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceAlertViewController.swift; sourceTree = "<group>"; };
+		B1F1C2312500307B0041B579 /* ErrorAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertViewController.swift; sourceTree = "<group>"; };
+		B1F1C233250031B50041B579 /* ErrorAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertView.swift; sourceTree = "<group>"; };
+		B1F1C23725003C620041B579 /* AlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewDelegate.swift; sourceTree = "<group>"; };
+		B1F1C23925003C8A0041B579 /* AlertViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +107,12 @@
 		B1F1C22F24FEED770041B579 /* alert */ = {
 			isa = PBXGroup;
 			children = (
-				B1F1C22B24FED8E80041B579 /* AlertView.swift */,
-				B1F1C22D24FEE2C10041B579 /* AlertViewController.swift */,
+				B1F1C22B24FED8E80041B579 /* AttendanceAlertView.swift */,
+				B1F1C22D24FEE2C10041B579 /* AttendanceAlertViewController.swift */,
+				B1F1C2312500307B0041B579 /* ErrorAlertViewController.swift */,
+				B1F1C233250031B50041B579 /* ErrorAlertView.swift */,
+				B1F1C23725003C620041B579 /* AlertViewDelegate.swift */,
+				B1F1C23925003C8A0041B579 /* AlertViewControllerDelegate.swift */,
 			);
 			path = alert;
 			sourceTree = "<group>";
@@ -193,9 +205,13 @@
 			files = (
 				B193512D24F3059500CD9286 /* ViewController.swift in Sources */,
 				B1836A5E24FD3A6C00B281D5 /* AttendanceResponse.swift in Sources */,
-				B1F1C22C24FED8E80041B579 /* AlertView.swift in Sources */,
-				B1F1C22E24FEE2C10041B579 /* AlertViewController.swift in Sources */,
+				B1F1C23A25003C8A0041B579 /* AlertViewControllerDelegate.swift in Sources */,
+				B1F1C2322500307B0041B579 /* ErrorAlertViewController.swift in Sources */,
+				B1F1C23825003C620041B579 /* AlertViewDelegate.swift in Sources */,
+				B1F1C22C24FED8E80041B579 /* AttendanceAlertView.swift in Sources */,
+				B1F1C22E24FEE2C10041B579 /* AttendanceAlertViewController.swift in Sources */,
 				B1836A5C24FD37E700B281D5 /* AttendanceRequest.swift in Sources */,
+				B1F1C234250031B50041B579 /* ErrorAlertView.swift in Sources */,
 				B193512B24F3059500CD9286 /* AppDelegate.swift in Sources */,
 				B1836A5724FD32E600B281D5 /* ApiClient.swift in Sources */,
 				B1836A5924FD336500B281D5 /* Constants.swift in Sources */,

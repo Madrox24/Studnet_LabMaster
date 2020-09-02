@@ -774,13 +774,21 @@
                                 <rect key="frame" x="43" y="120" width="254" height="190"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <connections>
-                                    <segue destination="iw6-bk-yZY" kind="embed" identifier="ConfirmationView" id="07l-ON-KDH"/>
+                                    <segue destination="iw6-bk-yZY" kind="embed" identifier="AttendanceAlertView" id="07l-ON-KDH"/>
+                                </connections>
+                            </containerView>
+                            <containerView hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G0k-nk-Y4v">
+                                <rect key="frame" x="43" y="120" width="254" height="190"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <connections>
+                                    <segue destination="hsH-Pz-ahW" kind="embed" identifier="ErrorView" id="Hxa-xS-Ns8"/>
                                 </connections>
                             </containerView>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="alertView" destination="CHW-qd-myt" id="p2I-ib-tGU"/>
+                        <outlet property="attendanceAlertView" destination="CHW-qd-myt" id="p2I-ib-tGU"/>
+                        <outlet property="errorAlertView" destination="G0k-nk-Y4v" id="JGW-ab-8dt"/>
                         <outlet property="studentIdTextField" destination="kJj-e7-nSz" id="DAX-MK-zQp"/>
                     </connections>
                 </viewController>
@@ -788,11 +796,11 @@
             </objects>
             <point key="canvasLocation" x="553" y="281"/>
         </scene>
-        <!--Alert View Controller-->
+        <!--Attendance Alert View Controller-->
         <scene sceneID="vWS-dk-CsY">
             <objects>
-                <viewController id="iw6-bk-yZY" customClass="AlertViewController" customModule="LabMaster" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="hJk-Gn-yTh" customClass="AlertView" customModule="LabMaster" customModuleProvider="target">
+                <viewController id="iw6-bk-yZY" customClass="AttendanceAlertViewController" customModule="LabMaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="hJk-Gn-yTh" customClass="AttendanceAlertView" customModule="LabMaster" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="254" height="190"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -878,12 +886,108 @@ DQ
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="contentView" destination="hJk-Gn-yTh" id="N5V-1q-GcT"/>
+                        <outlet property="contentView" destination="hJk-Gn-yTh" id="gTj-Ww-1Ak"/>
                     </connections>
                 </viewController>
                 <customObject id="0q3-Np-fEj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="364" y="745"/>
+        </scene>
+        <!--Error Alert View Controller-->
+        <scene sceneID="XIf-2k-uRI">
+            <objects>
+                <viewController id="hsH-Pz-ahW" customClass="ErrorAlertViewController" customModule="LabMaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="RZs-Hm-Rnu" customClass="ErrorAlertView" customModule="LabMaster" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="254" height="190"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GF5-OH-JlV">
+                                <rect key="frame" x="32" y="32" width="190" height="126"/>
+                                <subviews>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="1" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tcH-Zk-xVe">
+                                        <rect key="frame" x="0.0" y="90" width="130" height="36"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vHF-P7-NdE">
+                                                <rect key="frame" x="-2" y="17" width="134" height="19"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Wystąpił problem" id="eb3-My-nEl">
+                                                    <font key="font" metaFont="systemMedium" size="16"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ldK-PE-G38">
+                                                <rect key="frame" x="-2" y="0.0" width="134" height="16"/>
+                                                <textFieldCell key="cell" title="Kod problemu: 12345" id="bZh-Ri-Tan">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UR1-Rf-hBq">
+                                        <rect key="frame" x="-2" y="36" width="194" height="38"/>
+                                        <textFieldCell key="cell" title="Nie znaleziono użytkownika z podanym numerem" id="ESd-ms-cnz">
+                                            <font key="font" metaFont="system" size="15"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Rz1-Ih-hTr">
+                                        <rect key="frame" x="-6" y="-7" width="59" height="31"/>
+                                        <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FRI-ue-GyA">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="didTapOkButton:" target="RZs-Hm-Rnu" id="tlL-89-EbI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="126" id="Aq9-7I-zHe"/>
+                                    <constraint firstAttribute="width" constant="190" id="RFQ-D8-wW8"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="GF5-OH-JlV" firstAttribute="leading" secondItem="RZs-Hm-Rnu" secondAttribute="leading" constant="32" id="Gyc-nF-0m6"/>
+                            <constraint firstItem="GF5-OH-JlV" firstAttribute="top" secondItem="RZs-Hm-Rnu" secondAttribute="top" constant="32" id="Szs-5Q-uGE"/>
+                            <constraint firstAttribute="bottom" secondItem="GF5-OH-JlV" secondAttribute="bottom" constant="32" id="gAR-3z-EDt"/>
+                            <constraint firstAttribute="trailing" secondItem="GF5-OH-JlV" secondAttribute="trailing" constant="32" id="jbn-Nn-Gr9"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="descriptionTextField" destination="UR1-Rf-hBq" id="siR-Wd-AUe"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="RZs-Hm-Rnu" id="klk-kP-ifM"/>
+                    </connections>
+                </viewController>
+                <customObject id="A67-8S-CCR" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="668" y="745"/>
         </scene>
     </scenes>
     <resources>

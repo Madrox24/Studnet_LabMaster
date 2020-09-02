@@ -1,24 +1,20 @@
 //
-//  AlertViewController.swift
+//  ErrorAlertViewController.swift
 //  LabMaster
 //
-//  Created by Robert Moryson on 01/09/2020.
+//  Created by Robert Moryson on 02/09/2020.
 //  Copyright © 2020 Robert Moryson. All rights reserved.
 //
 
 import Cocoa
 
-protocol AlertViewControllerDelegate {
-    func hideView()
-}
-
-class AlertViewController: NSViewController {
+class ErrorAlertViewController: NSViewController {
     
     // properties
     public var delegate: AlertViewControllerDelegate?
     
     // outlets
-    @IBOutlet var contentView: AlertView!
+    @IBOutlet var contentView: ErrorAlertView!
     
     // lifecycle
     override func viewDidLoad() {
@@ -27,13 +23,13 @@ class AlertViewController: NSViewController {
     }
     
     // public functions
-    public func setConfirmationView(name: String, id: Int) {
-        self.contentView.setConfirmationView(name: name, id: id)
+    public func setErrorView(description: String) {
+        self.contentView.setErrorView(description: description)
     }
     
 }
 
-extension AlertViewController: AlertViewDelegate {
+extension ErrorAlertViewController: AlertViewDelegate {
     func hideView() {
         self.delegate?.hideView()
     }
