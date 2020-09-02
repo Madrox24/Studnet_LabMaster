@@ -8,9 +8,14 @@
 
 import Cocoa
 
+protocol AlertViewDelegate {
+    func hideView()
+}
+
 class AlertView: NSView {
     
     // properties
+    var delegate: AlertViewDelegate?
     private var name: String? {
         didSet {
             guard let name = name else { return }
@@ -40,4 +45,9 @@ class AlertView: NSView {
         self.name = name
         self.studentId = id
     }
+    
+    @IBAction func didTapOkButton(_ sender: NSButton) {
+        self.delegate?.hideView()
+    }
+    
 }

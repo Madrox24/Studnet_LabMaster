@@ -8,13 +8,22 @@
 
 import Cocoa
 
+protocol AlertViewControllerDelegate {
+    func hideView()
+}
+
 class AlertViewController: NSViewController {
     
+    // properties
+    public var delegate: AlertViewControllerDelegate?
+    
+    // outlets
     @IBOutlet var contentView: AlertView!
     
     // lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.contentView.delegate = self
     }
     
     // public functions
@@ -22,4 +31,10 @@ class AlertViewController: NSViewController {
         self.contentView.setConfirmationView(name: name, id: id)
     }
     
+}
+
+extension AlertViewController: AlertViewDelegate {
+    func hideView() {
+        self.delegate?.hideView()
+    }
 }

@@ -32,6 +32,7 @@ class ViewController: NSViewController {
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if segue.identifier == "ConfirmationView" {
             self.alertViewController = segue.destinationController as? AlertViewController
+            self.alertViewController?.delegate = self
         }
     }
     
@@ -57,3 +58,8 @@ class ViewController: NSViewController {
     
 }
 
+extension ViewController: AlertViewControllerDelegate {
+    func hideView() {
+        self.alertView.isHidden = true
+    }
+}

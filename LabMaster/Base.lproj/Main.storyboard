@@ -845,6 +845,9 @@
 DQ
 </string>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="didTapOkButton:" target="hJk-Gn-yTh" id="rVX-ZY-hyE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
