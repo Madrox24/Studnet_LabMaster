@@ -10,10 +10,9 @@ import Foundation
 
 enum Constants {
     enum api {
-        static let base         = "http://127.0.0.1:5000/"
+        static let base         = "http://192.168.43.37:5000"
         static let attendance   = base + "/api/attendance"
-    }
-    enum station {
-        static let id           = 658995
+        static let register     = base + "/api/register"
+        static let info         = base + "/api/info"
     }
 }

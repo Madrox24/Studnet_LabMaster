@@ -721,7 +721,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpa-7F-UgV">
                                 <rect key="frame" x="351" y="356" width="263" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Stanowisko 123456" id="b77-Vo-E9W">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Stanowisko" id="b77-Vo-E9W">
                                     <font key="font" metaFont="systemHeavy" size="20"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -748,18 +748,18 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oWu-rD-EE6">
-                                <rect key="frame" x="351" y="50" width="211" height="16"/>
+                                <rect key="frame" x="351" y="50" width="263" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Zajęcia: Podstawy Programowania" id="bxP-IY-0jD">
+                                <textFieldCell key="cell" lineBreakMode="clipping" id="bxP-IY-0jD">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mKI-EJ-SEj">
-                                <rect key="frame" x="351" y="26" width="166" height="16"/>
+                                <rect key="frame" x="351" y="26" width="263" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Prowadzący: Jan Nawercki" id="zxk-HF-FHM">
+                                <textFieldCell key="cell" lineBreakMode="clipping" id="zxk-HF-FHM">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -784,17 +784,149 @@
                                     <segue destination="hsH-Pz-ahW" kind="embed" identifier="ErrorView" id="Hxa-xS-Ns8"/>
                                 </connections>
                             </containerView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K92-dJ-oGm">
+                                <rect key="frame" x="14" y="13" width="166" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Panel konfiguracyjny" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="N3w-Mg-19V">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="X5T-af-ZN4" kind="sheet" identifier="Configuration" id="NIH-qj-p6h"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="attendanceAlertView" destination="CHW-qd-myt" id="p2I-ib-tGU"/>
                         <outlet property="errorAlertView" destination="G0k-nk-Y4v" id="JGW-ab-8dt"/>
+                        <outlet property="lecturerLabel" destination="mKI-EJ-SEj" id="3DK-ij-TVg"/>
+                        <outlet property="stationIdLabel" destination="rpa-7F-UgV" id="QgA-cS-ZzV"/>
                         <outlet property="studentIdTextField" destination="kJj-e7-nSz" id="DAX-MK-zQp"/>
+                        <outlet property="subjectInfoLabel" destination="oWu-rD-EE6" id="Sox-LU-wL2"/>
                     </connections>
                 </viewController>
                 <customObject id="Zli-Ag-iVu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="553" y="281"/>
+        </scene>
+        <!--Configuration View Controller-->
+        <scene sceneID="LZi-pd-Nw0">
+            <objects>
+                <viewController storyboardIdentifier="Configuration" id="X5T-af-ZN4" customClass="ConfigurationViewController" customModule="LabMaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="tTz-b5-IsD">
+                        <rect key="frame" x="0.0" y="0.0" width="416" height="271"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I8O-ab-oaT">
+                                <rect key="frame" x="30" y="173" width="30" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Sala" id="gks-cp-T9E">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ysW-Go-ChV">
+                                <rect key="frame" x="32" y="144" width="146" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="503x" drawsBackground="YES" id="Ce6-xo-svd">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2fr-OO-Sif">
+                                <rect key="frame" x="32" y="91" width="146" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="13" drawsBackground="YES" id="jy3-tt-BmW">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m0B-hd-1sn">
+                                <rect key="frame" x="18" y="197" width="263" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Konfiguracja stanowiska" id="Qij-AB-K40">
+                                    <font key="font" metaFont="systemHeavy" size="20"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sv7-Jd-z4p">
+                                <rect key="frame" x="30" y="120" width="94" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Numer miejsca" id="p5p-7K-n7b">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zhh-eg-E5E">
+                                <rect key="frame" x="30" y="67" width="39" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Hasło" id="8mH-Mb-gXu">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bvV-xW-c3U">
+                                <rect key="frame" x="32" y="38" width="146" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="*********" drawsBackground="YES" usesSingleLineMode="YES" id="AY5-58-0D7">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                            </secureTextField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Mb-wV-fdr">
+                                <rect key="frame" x="219" y="60" width="183" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Zapisz" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oOe-qe-4cX">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didTapSaveButton:" target="X5T-af-ZN4" id="mcO-8b-Znt"/>
+                                </connections>
+                            </button>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xjr-iV-3ht">
+                                <rect key="frame" x="223" y="96" width="175" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Error" id="ySr-h6-ID5">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wnD-ZF-vzG">
+                                <rect key="frame" x="219" y="31" width="183" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Porzuć i wyjść" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BWD-c9-qgG">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didTapDismissButton:" target="X5T-af-ZN4" id="eFj-1H-A86"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="errorLabel" destination="xjr-iV-3ht" id="jjQ-c6-pXR"/>
+                        <outlet property="passwordTextField" destination="bvV-xW-c3U" id="D6u-sE-DMi"/>
+                        <outlet property="positionTextField" destination="2fr-OO-Sif" id="ZfS-q1-JyZ"/>
+                        <outlet property="roomTextField" destination="ysW-Go-ChV" id="kqS-eQ-9rF"/>
+                    </connections>
+                </viewController>
+                <customObject id="eYK-pB-Q50" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1183" y="185.5"/>
         </scene>
         <!--Attendance Alert View Controller-->
         <scene sceneID="vWS-dk-CsY">
@@ -979,6 +1111,7 @@ DQ
                         </constraints>
                         <connections>
                             <outlet property="descriptionTextField" destination="UR1-Rf-hBq" id="siR-Wd-AUe"/>
+                            <outlet property="errorCodeLabel" destination="ldK-PE-G38" id="103-ep-ru0"/>
                         </connections>
                     </view>
                     <connections>

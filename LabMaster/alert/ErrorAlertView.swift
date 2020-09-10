@@ -12,6 +12,7 @@ class ErrorAlertView: AlertView {
     
     // outlets
     @IBOutlet weak var descriptionTextField: NSTextField!
+    @IBOutlet weak var errorCodeLabel: NSTextField!
     
     // public func
     public func setErrorView(description: String) {
